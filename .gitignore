@@ -1,14 +1,15 @@
-# Build outputs
-*.o
-*.obj
-*.exe
-ecc_demo
-ecc_demo.exe
-build.log
+# Build outputs (root only; do not match files under third_party/)
+/*.o
+/*.obj
+/*.exe
+/ecc_demo
+/ecc_demo.exe
+/build.log
 
-# Runtime DLLs copied next to the .exe (the originals live in third_party/)
-libcrypto-3-x64.dll
-libwinpthread-1.dll
+# Runtime DLLs copied next to the .exe at build time
+# (Anchored to root so the originals under third_party/openssl/bin/ stay tracked.)
+/libcrypto-3-x64.dll
+/libwinpthread-1.dll
 
 # Editor / IDE
 .vscode/
