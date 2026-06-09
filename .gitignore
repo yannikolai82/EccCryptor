@@ -1,15 +1,30 @@
-# Build outputs (root only; do not match files under third_party/)
+# Build outputs (anchored to root only; vendored files under third_party/ stay)
 /*.o
 /*.obj
 /*.exe
 /ecc_demo
 /ecc_demo.exe
-/build.log
+/ecc_demo_openssl
+/ecc_demo_openssl.exe
+/ecc_demo_mbedtls
+/ecc_demo_mbedtls.exe
+/build*.log
+/build_mbedtls_obj/
 
 # Runtime DLLs copied next to the .exe at build time
-# (Anchored to root so the originals under third_party/openssl/bin/ stay tracked.)
+# (Anchored to root so the originals under third_party/ stay tracked.)
 /libcrypto-3-x64.dll
 /libwinpthread-1.dll
+
+# Temporary download/extract area for vendored libs
+/tmp_mbedtls/
+
+# Single mbedTLS source omitted from this repo because Windows Defender
+# real-time scanning consistently raced git's object writes for it during
+# the initial commit. It's not compiled by this project (SSL is disabled
+# in third_party/mbedtls/include/mbedtls/config.h). To restore, re-extract
+# mbedtls-2.28.10 and drop this file in place.
+/third_party/mbedtls/library/ssl_cli.c
 
 # Editor / IDE
 .vscode/
