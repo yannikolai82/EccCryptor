@@ -1,0 +1,21 @@
+# Build outputs
+*.o
+*.obj
+*.exe
+ecc_demo
+ecc_demo.exe
+build.log
+
+# Runtime DLLs copied next to the .exe (the originals live in third_party/)
+libcrypto-3-x64.dll
+libwinpthread-1.dll
+
+# Editor / IDE
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS junk
+Thumbs.db
+.DS_Store
