@@ -19,13 +19,6 @@
 # Temporary download/extract area for vendored libs
 /tmp_mbedtls/
 
-# Single mbedTLS source omitted from this repo because Windows Defender
-# real-time scanning consistently raced git's object writes for it during
-# the initial commit. It's not compiled by this project (SSL is disabled
-# in third_party/mbedtls/include/mbedtls/config.h). To restore, re-extract
-# mbedtls-2.28.10 and drop this file in place.
-/third_party/mbedtls/library/ssl_cli.c
-
 # Editor / IDE
 .vscode/
 .idea/
