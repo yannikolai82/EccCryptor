@@ -18,12 +18,15 @@
 
 # Temporary download/extract area for vendored libs
 /tmp_mbedtls/
+/tmp_openssl_msvc/
 
 # Editor / IDE
 .vscode/
 .idea/
 *.user
 *.suo
+# Editor autosave / scratch files (e.g. README.md.tmp.4996.8ea6fdc5333a)
+*.tmp.*
 
 # OS junk
 Thumbs.db
