@@ -390,6 +390,11 @@ make STATIC=1               # force static link
 The vendored MinGW import library does **not** link with MSVC; use vcpkg
 or a separate MSVC build of OpenSSL.
 
+(For MSVC users who want a self-contained `.exe` without dealing with
+OpenSSL at all, use the **mbedTLS backend** — its vendored sources compile
+cleanly with `cl.exe` and statically link into a single binary. See the
+top-of-README table.)
+
 ---
 
 ## Windows XP support
@@ -428,11 +433,12 @@ Everything under [`third_party/`](third_party/) is redistributed under
 Apache-2.0 (matching this repository's license). No modifications other
 than the project-specific `mbedtls/include/mbedtls/config.h`.
 
-| Library    | Source                                          | Version    | Vendored size |
-|------------|-------------------------------------------------|------------|---------------|
-| OpenSSL    | msys2 `mingw-w64-x86_64-openssl` package        | **3.6.2**  | ~20 MB        |
-| winpthread | msys2 `mingw-w64-x86_64-libwinpthread` package  | (current)  | ~63 KB        |
-| mbedTLS    | [Mbed-TLS/mbedtls](https://github.com/Mbed-TLS/mbedtls) (tag `mbedtls-2.28.10`) | **2.28.10 LTS** | ~6 MB |
+- **OpenSSL** — version **3.6.2**, ~20 MB.
+  From msys2 `mingw-w64-x86_64-openssl` package.
+- **winpthread** — current msys2 version, ~63 KB.
+  From msys2 `mingw-w64-x86_64-libwinpthread` package.
+- **mbedTLS** — version **2.28.10 LTS**, ~6 MB.
+  From [Mbed-TLS/mbedtls](https://github.com/Mbed-TLS/mbedtls), tag `mbedtls-2.28.10`.
 
 To upgrade either library, replace the files in place — the public APIs
 this project uses (OpenSSL: `EVP_PKEY`, `EC_KEY`, `ECDSA_do_sign`, HKDF;
